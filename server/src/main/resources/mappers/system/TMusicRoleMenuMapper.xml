@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangl.music.server.modules.system.role.mapper.TMusicRoleMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.tangl.music.server.modules.system.role.entity.TMusicRoleMenu">
+        <result property="roleId" column="role_id" jdbcType="BIGINT"/>
+        <result property="menuId" column="menu_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="baseColumnList">
+        select role_id, menu_id
+        from t_music_role_menu
+    </sql>
+
+    <!-- 查询权限标识列表 -->
+    <select id="queryPermissions" resultType="java.lang.String">
+        select DISTINCT b.permission as permission
+        from t_music_role_menu a,
+        t_music_menu b
+        where
+        b.del_flag = 0 and
+        a.menu_id = b.menu_id
+        and role_id in
+        <foreach collection="roleIdList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

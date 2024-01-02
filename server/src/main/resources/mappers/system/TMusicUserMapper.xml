@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangl.music.server.modules.system.user.mapper.TMusicUserMapper">
+
+    <resultMap id="baseResultMap" type="com.tangl.music.server.modules.system.user.entity.TMusicUser">
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="TINYINT"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
+        <result property="avatarFileId" column="avatar_file_id" jdbcType="BIGINT"/>
+        <result property="loginIp" column="login_ip" jdbcType="VARCHAR"/>
+        <result property="loginDate" column="login_date" jdbcType="TIMESTAMP"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="createBy" column="create_by" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="BIGINT"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="baseColumnList">
+        select user_id,
+               real_name,
+               username,
+               password,
+               gender,
+               email,
+               phone_number,
+               avatar_file_id,
+               login_ip,
+               login_date,
+               status,
+               create_by,
+               create_time,
+               update_by,
+               update_time,
+               del_flag
+        from t_music_user
+    </sql>
+
+    <!-- 更新用户信息 -->
+    <update id="updateUser">
+        update t_music_user
+        <set>
+            <if test="realName != null and realName != ''">
+                real_name = #{realName},
+            </if>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="gender != null">
+                gender = #{gender},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="phoneNumber != null and phoneNumber != ''">
+                phone_number = #{phoneNumber},
+            </if>
+            <if test="avatarFileId != null">
+                avatar_file_id = #{avatarFileId},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="delFlag != null">
+                del_flag = #{delFlag},
+            </if>
+        </set>
+        where user_id = #{userId}
+    </update>
+
+    <!-- 根据条件统计总行数 -->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from t_music_user
+        where del_flag = 0
+        <if test="realName != null and realName != ''">
+            and real_name = #{realName}
+        </if>
+        <if test="username != null and username != ''">
+            and username like concat('%', #{username})
+        </if>
+        <if test="gender != null">
+            and gender = #{gender}
+        </if>
+        <if test="email != null and email != ''">
+            and email = #{email}
+        </if>
+        <if test="phoneNumber != null and phoneNumber != ''">
+            and phone_number = #{phoneNumber}
+        </if>
+        <if test="status != null">
+            and status = #{status}
+        </if>
+        <if test="delFlag != null">
+            and del_flag = #{delFlag}
+        </if>
+    </select>
+
+    <!-- 分页条件查询 -->
+    <select id="queryPage" resultMap="baseResultMap">
+        <include refid="baseColumnList"/>
+        where del_flag = 0
+
+        <if test="params.realName != null and params.realName != ''">
+            and real_name = #{params.realName}
+        </if>
+        <if test="params.username != null and params.username != ''">
+            and username like concat('%', #{params.username})
+        </if>
+        <if test="params.gender != null">
+            and gender = #{params.gender}
+        </if>
+        <if test="params.email != null and params.email != ''">
+            and email = #{params.email}
+        </if>
+        <if test="params.phoneNumber != null and params.phoneNumber != ''">
+            and phone_number = #{params.phoneNumber}
+        </if>
+        <if test="params.status != null">
+            and status = #{params.status}
+        </if>
+        <if test="params.delFlag != null">
+            and del_flag = #{params.delFlag}
+        </if>
+        limit #{offset}, #{pageSize}
+    </select>
+</mapper>

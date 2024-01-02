@@ -1,0 +1,52 @@
+{
+  "properties": [
+    {
+      "name": "swagger3.group-name",
+      "type": "java.lang.String",
+      "description": "组名称",
+      "defaultValue": "t-pan"
+    },
+    {
+      "name": "swagger3.title",
+      "type": "java.lang.String",
+      "description": "接口文档标题",
+      "defaultValue": "t-pan-server"
+    },
+    {
+      "name": "swagger3.description",
+      "type": "java.lang.String",
+      "description": "接口文档描述",
+      "defaultValue": "t-pan-server"
+    },
+    {
+      "name": "swagger3.terms-of-service-url",
+      "type": "java.lang.String",
+      "description": "接口文档基础请求路径",
+      "defaultValue": "http://127.0.0.1:8080"
+    },
+    {
+      "name": "swagger3.contact-name",
+      "type": "java.lang.String",
+      "description": "联系人名称",
+      "defaultValue": "tangl"
+    },
+    {
+      "name": "swagger3.contact-url",
+      "type": "java.lang.String",
+      "description": "联系人地址",
+      "defaultValue": "t-bright.top"
+    },
+    {
+      "name": "swagger3.contact-email",
+      "type": "java.lang.String",
+      "description": "联系人邮箱",
+      "defaultValue": "tl-bright@163.com"
+    },
+    {
+      "name": "swagger3.version",
+      "type": "java.lang.String",
+      "description": "项目版本",
+      "defaultValue": "v1.0.0"
+    }
+  ]
+}

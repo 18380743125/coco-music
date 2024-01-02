@@ -1,0 +1,11 @@
+  ${AnsiColor.BLUE}
+
+  _______     __  __                 _             _____
+ |__   __|   |  \/  |               (_)           / ____|
+    | |      | \  / |  _   _   ___   _    ___    | (___     ___   _ __  __   __   ___   _ __
+    | |      | |\/| | | | | | / __| | |  / __|    \___ \   / _ \ | '__| \ \ / /  / _ \ | '__|
+    | |      | |  | | | |_| | \__ \ | | | (__     ____) | |  __/ | |     \ V /  |  __/ | |
+    |_|      |_|  |_|  \__,_| |___/ |_|  \___|   |_____/   \___| |_|      \_/    \___| |_|
+
+ ${AnsiColor.YELLOW}ENV:${spring.profiles.active:default}                         ${AnsiColor.BRIGHT_GREEN}VERSION:${swagger3.version:1.0}
+ ${AnsiColor.BRIGHT_GREEN}
