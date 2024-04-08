@@ -9,11 +9,6 @@ import org.springframework.core.annotation.Order;
 
 import java.io.IOException;
 
-/**
- * @author tangl
- * @description 支持跨域的过滤器
- * @create 2023-06-22 18:09
- */
 @WebFilter(filterName = "corsFilter")
 @Order(1)
 public class CorsFilter implements Filter {

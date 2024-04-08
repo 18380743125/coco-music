@@ -1,6 +1,6 @@
 package com.tangl.music.web.validator;
 
-import com.tangl.music.core.constants.TMusicConstants;
+import com.tangl.music.core.constants.CoCoMusicConstants;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
@@ -37,7 +37,7 @@ public class WebValidatorConfig {
     private Validator tPanValidator() {
         ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)
                 .configure()
-                .addProperty(FAIT_FAST_KEY, TMusicConstants.TRUE_STR)
+                .addProperty(FAIT_FAST_KEY, CoCoMusicConstants.TRUE_STR)
                 .buildValidatorFactory();
         return validatorFactory.getValidator();
     }

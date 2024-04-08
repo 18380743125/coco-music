@@ -4,9 +4,9 @@ import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.ArrayUtil;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
-import com.tangl.music.core.constants.TMusicConstants;
-import com.tangl.music.core.exception.TMusicBusinessException;
-import org.apache.commons.collections.CollectionUtils;
+import com.tangl.music.core.constants.CoCoMusicConstants;
+import com.tangl.music.core.exception.CoCoMusicBusinessException;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.NetworkInterface;
@@ -210,9 +210,9 @@ public class IdUtil {
                 ByteBuffer byteBuffer = ByteBuffer.wrap(content);
                 return byteBuffer.getLong();
             }
-            throw new TMusicBusinessException("AES128Util.aesDecode fail");
+            throw new CoCoMusicBusinessException("AES128Util.aesDecode fail");
         }
-        throw new TMusicBusinessException("the decryptId can not be empty");
+        throw new CoCoMusicBusinessException("the decryptId can not be empty");
     }
 
     /**
@@ -225,7 +225,7 @@ public class IdUtil {
         if (StringUtils.isBlank(decryptIdStr)) {
             return Lists.newArrayList();
         }
-        List<String> decryptIdList = Splitter.on(TMusicConstants.COMMON_SEPARATOR).splitToList(decryptIdStr);
+        List<String> decryptIdList = Splitter.on(CoCoMusicConstants.COMMON_SEPARATOR).splitToList(decryptIdStr);
         if (CollectionUtils.isEmpty(decryptIdList)) {
             return Lists.newArrayList();
         }

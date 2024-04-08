@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.tangl.music</groupId>
-        <artifactId>t-music-parent</artifactId>
-        <version>1.0</version>
+        <artifactId>coco-m</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>t-music-server</artifactId>
+    <artifactId>server</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -25,31 +25,32 @@
 
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-web</artifactId>
-            <version>1.0</version>
+            <artifactId>web</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-swagger3</artifactId>
-            <version>1.0</version>
+            <artifactId>swagger3</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-cache-redis</artifactId>
-            <version>1.0</version>
+            <artifactId>cache-redis</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-mybatis-plus</artifactId>
-            <version>1.0</version>
+            <artifactId>mybatis-plus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tangl.music</groupId>
+            <artifactId>storage-engine-local</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>t-music-server</finalName>
+        <finalName>coco-m-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

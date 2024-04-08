@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.tangl.music</groupId>
-        <artifactId>t-music-parent</artifactId>
-        <version>1.0</version>
+        <artifactId>coco-m</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>t-music-framework</artifactId>
+    <artifactId>framework</artifactId>
     <packaging>pom</packaging>
 
     <modules>
@@ -18,6 +18,8 @@
         <module>cache</module>
         <module>swagger3</module>
         <module>orm</module>
+        <module>storage-engine</module>
+        <module>lock</module>
     </modules>
 
     <properties>

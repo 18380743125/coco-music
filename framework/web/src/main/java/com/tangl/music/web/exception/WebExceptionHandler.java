@@ -1,7 +1,7 @@
 package com.tangl.music.web.exception;
 
-import com.tangl.music.core.exception.TMusicBusinessException;
-import com.tangl.music.core.exception.TMusicFrameworkException;
+import com.tangl.music.core.exception.CoCoMusicBusinessException;
+import com.tangl.music.core.exception.CoCoMusicFrameworkException;
 import com.tangl.music.core.response.R;
 import com.tangl.music.core.response.ResponseCode;
 import jakarta.validation.ConstraintViolation;
@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  */
 @RestControllerAdvice
 public class WebExceptionHandler {
-    @ExceptionHandler(value = TMusicBusinessException.class)
-    public R<?> tMusicBusinessExceptionHandler(TMusicBusinessException e) {
+    @ExceptionHandler(value = CoCoMusicBusinessException.class)
+    public R<?> tMusicBusinessExceptionHandler(CoCoMusicBusinessException e) {
         return R.fail(e.getCode(), e.getMessage());
     }
 
@@ -54,8 +54,8 @@ public class WebExceptionHandler {
         return R.fail(ResponseCode.ERROR_PARAM.getCode(), fieldError.getDefaultMessage());
     }
 
-    @ExceptionHandler(value = TMusicFrameworkException.class)
-    public R<?> tMusicFrameworkException(TMusicBusinessException e) {
+    @ExceptionHandler(value = CoCoMusicFrameworkException.class)
+    public R<?> tMusicFrameworkException(CoCoMusicBusinessException e) {
         return R.fail(ResponseCode.ERROR.getCode(), e.getMessage());
     }
 

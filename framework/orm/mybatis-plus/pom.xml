@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.tangl.music</groupId>
-        <artifactId>t-music-orm</artifactId>
-        <version>1.0</version>
+        <artifactId>orm</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>t-music-mybatis-plus</artifactId>
+    <artifactId>mybatis-plus</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,33 +18,40 @@
     </properties>
 
     <dependencies>
+        <!-- core -->
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-core</artifactId>
-            <version>1.0</version>
+            <artifactId>core</artifactId>
         </dependency>
+
         <!--mysql-connector-j-->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
+            <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
+
         <!--mybatis-plus-spring-boot-starter-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
+
+
+        <!--分页插件-->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.jsqlparser</groupId>
+                    <artifactId>jsqlparser</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

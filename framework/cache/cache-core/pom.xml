@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.tangl.music</groupId>
-        <artifactId>t-music-cache</artifactId>
-        <version>1.0</version>
+        <artifactId>cache</artifactId>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>t-music-cache-core</artifactId>
+    <artifactId>cache-core</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -20,8 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.tangl.music</groupId>
-            <artifactId>t-music-core</artifactId>
-            <version>1.0</version>
+            <artifactId>core</artifactId>
         </dependency>
 
         <dependency>

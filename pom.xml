@@ -11,17 +11,16 @@
     </parent>
 
     <groupId>com.tangl.music</groupId>
-    <artifactId>t-music-parent</artifactId>
+    <artifactId>coco-m</artifactId>
     <packaging>pom</packaging>
 
-    <version>1.0</version>
-    <name>t-music-parent</name>
-    <description>t music server side</description>
+    <name>coco-m</name>
+    <version>1.0.0</version>
+    <description>coco music server side</description>
 
     <modules>
         <module>framework</module>
         <module>server</module>
-        <module>distribution</module>
     </modules>
 
     <properties>
@@ -31,21 +30,22 @@
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <druid.version>1.2.20</druid.version>
-        <mysql-connector.version>8.2.0</mysql-connector.version>
-        <mybatis-plus.version>3.5.4.1</mybatis-plus.version>
-        <velocity.version>2.3</velocity.version>
-        <jackson.version>2.16.0</jackson.version>
-        <guava.version>32.1.3-jre</guava.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <commons-collections.version>3.2.2</commons-collections.version>
+        <coco-m-server.version>1.0.0</coco-m-server.version>
+        <mysql-connector.version>8.3.0</mysql-connector.version>
+        <druid.version>1.2.18</druid.version>
+        <mybatis-plus.version>3.5.5</mybatis-plus.version>
+        <pagehelper.boot.version>1.4.7</pagehelper.boot.version>
+        <jackson.version>2.17.0</jackson.version>
+        <guava.version>33.1.0-jre</guava.version>
+        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <commons-collections.version>4.4</commons-collections.version>
+        <hutool.version>5.8.23</hutool.version>
         <fastjson.version>2.0.40</fastjson.version>
         <jjwt.version>0.12.3</jjwt.version>
-        <commons-io.version>2.4</commons-io.version>
+        <commons-io.version>2.16.0</commons-io.version>
+        <oss.client.version>2.8.3</oss.client.version>
         <swagger.version>2.2.0</swagger.version>
         <knife4j.version>4.3.0</knife4j.version>
-        <hutool.version>5.8.23</hutool.version>
-        <reflections.version>0.10.2</reflections.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <projectlombok.version>1.18.30</projectlombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
@@ -53,113 +53,215 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--reflections-->
-            <dependency>
-                <groupId>org.reflections</groupId>
-                <artifactId>reflections</artifactId>
-                <version>${reflections.version}</version>
-            </dependency>
+
             <!-- mysql-connector-j -->
             <dependency>
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
-                <scope>runtime</scope>
                 <version>${mysql-connector.version}</version>
             </dependency>
+
+            <!-- druid 数据库连接池 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
+                <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-            <!--mybatis-plus-spring-boot-starter-->
+
+            <!-- mybatis-plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+
+            <!-- pagehelper 分页插件 -->
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-generator</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity-engine-core</artifactId>
-                <version>${velocity.version}</version>
-            </dependency>
+
             <!--json序列化-->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+
             <!--guava-->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
             <!--commons-lang3-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
+
             <!--commons-collections-->
             <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections.version}</version>
             </dependency>
+
             <!--commons-io-->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
-            <!--fastjson-->
+
+            <!-- oss -->
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.client.version}</version>
             </dependency>
-            <!--jjwt-->
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-            <!--swagger-->
-            <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-                <version>${knife4j.version}</version>
-            </dependency>
+
             <!--hutool-core-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-core</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--jjwt-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!--swagger ui 界面 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${projectlombok.version}</version>
             </dependency>
+
+            <!-- mapstruct -->
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${org.mapstruct.version}</version>
+            </dependency>
+
+            <!--项目核心模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>core</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--redis缓存模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>cache-core</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!-- cache redis -->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>cache-redis</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--锁机制核心模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>lock-core</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--锁机制-本地锁-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>lock-local</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--锁机制-redis分布式锁-->
+             <dependency>
+                 <groupId>com.tangl.music</groupId>
+                 <artifactId>lock-redis</artifactId>
+                 <version>${coco-m-server.version}</version>
+             </dependency>
+
+            <!--文件存储核心模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>storage-engine-core</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--文件存储-本地存储-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>storage-engine-local</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--文件存储-oss存储-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>storage-engine-oss</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--swagger模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>swagger3</artifactId>
+                <version>${coco-m-server.version}</version>
+            </dependency>
+
+            <!--web模块-->
+            <dependency>
+                <groupId>com.tangl.music</groupId>
+                <artifactId>web</artifactId>
+                <version>${coco-m-server.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -200,5 +302,20 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>aliyun maven</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
