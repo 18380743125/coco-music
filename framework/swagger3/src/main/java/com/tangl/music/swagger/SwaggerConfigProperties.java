@@ -5,28 +5,30 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @author tangl
- * @description
- * @create 2023-11-26 18:04
+ * swagger配置属性实体
  */
 @Data
 @Component
-@ConfigurationProperties(value = "swagger3")
+@ConfigurationProperties(value = "swagger")
 public class SwaggerConfigProperties {
 
-    private String groupName = "t-music";
+    private String title = "Your title";
 
-    private String title = "t-music-server";
+    private String description = "Your description";
 
-    private String description = "t-music-server";
+    private String termsOfServiceUrl = "你的API服务条款地址";
 
-    private String termsOfServiceURL = "http://tangl666.fun:8080";
+    private String contactName = "Your contact name";
 
-    private String contactName = "tangl";
+    private String contactUrl = "Your contact url";
 
-    private String contactUrl = "tangl666.fun";
+    private String contactEmail = "Your contact email";
 
-    private String contactEmail = "tl-bright@163.com";
+    private String licenseName = "Your license name";
 
-    private String version = "v1.0.0";
+    private String licenseUrl = "Your license url";
+
+    private String licenseIdentifier = "Your license identifier";
+
+    private String version="1.0";
 }

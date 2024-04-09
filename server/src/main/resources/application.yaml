@@ -81,7 +81,7 @@ mybatis-plus:
       id-type: assign_id
     banner: false
 
-# springdoc-openapi项目配置
+# swagger
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -90,21 +90,18 @@ springdoc:
   api-docs:
     path: /v3/api-docs
   packages-to-scan: com.group.coco.server.modules
-
-#swagger:
-#  title: coco server 接口文档
-#  description: 接口文档，测试用
-#  terms-of-service-url: 127.0.0.1:8085
-#  contact-name: app
-#  contact-url: 127.0.0.1:8085
-#  contact-email: app.163.com
-#  license-name: app
-#  license-url: 127.0.0.1:8085
-#  license-identifier: app group
-#  version: 1.0
-
+swagger:
+  title: coco server 接口文档
+  description: 接口文档，测试用
+  terms-of-service-url: 127.0.0.1:8085
+  contact-name: app
+  contact-url: 127.0.0.1:8085
+  contact-email: app.163.com
+  license-name: app
+  license-url: 127.0.0.1:8085
+  license-identifier: app group
+  version: 1.0
 knife4j:
-  #  enable: true
   setting:
     language: zh_cn
     swagger-model-name: 实体类列表

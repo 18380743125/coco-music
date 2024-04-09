@@ -1,4 +1,88 @@
 {
   "properties": [
+    {
+      "name": "token.header",
+      "type": "java.lang.String",
+      "description": "令牌自定义标识.",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "token.secret",
+      "type": "java.lang.String",
+      "description": "令牌秘钥.",
+      "defaultValue": "N9jPYCXrwkuFIswmhb/VJJ3pHlmK5R3leA6PlDS7XXJv9hftWfuDZD2rfHb1z6qPgIuMx2UvG91/ayBjNskHBg"
+    },
+    {
+      "name": "token.expire-time",
+      "type": "java.lang.Integer",
+      "description": "令牌有效期（默认1小时）, 单位为分钟.",
+      "defaultValue": 60
+    },
+    {
+      "name": "token.iss",
+      "type": "java.lang.String",
+      "description": "jwt签发者.",
+      "defaultValue": "tangl"
+    },
+    {
+      "name": "easy-captcha.code-type",
+      "type": "java.lang.String",
+      "description": "验证码类型(gif、gif-cn(中文gif)、math(数学运算)、cn(中文), png).",
+      "defaultValue": "gif"
+    },
+    {
+      "name": "easy-captcha.length",
+      "type": "java.lang.Integer",
+      "description": "验证码内容长度(gig/gif-cn/cn)或者参与算数的位数(math).",
+      "defaultValue": 4
+    },
+    {
+      "name": "easy-captcha.width",
+      "type": "java.lang.Integer",
+      "description": "验证码宽度.",
+      "defaultValue": 130
+    },
+    {
+      "name": "easy-captcha.height",
+      "type": "java.lang.Integer",
+      "description": "验证码高度.",
+      "defaultValue": 48
+    },
+    {
+      "name": "easy-captcha.expire-time",
+      "type": "java.lang.Integer",
+      "description": "验证码有效期(分钟).",
+      "defaultValue": 1
+    },
+    {
+      "name": "coco-server.name",
+      "type": "java.lang.String",
+      "description": "服务器名称.",
+      "defaultValue": "CoCo Server"
+    },
+    {
+      "name": "coco-server.version",
+      "type": "java.lang.String",
+      "description": "版本.",
+      "defaultValue": "1.0.0"
+    },
+    {
+      "name": "coco-server.copyright-year",
+      "type": "java.lang.String",
+      "description": "版本年份.",
+      "defaultValue": "2024"
+    },
+    {
+      "name": "coco-server.address-enabled",
+      "type": "java.lang.Boolean",
+      "description": "地址开关.",
+      "defaultValue": true
+    },
+    {
+      "name": "coco-server.chunk-file-expiration-days",
+      "type": "java.lang.Number",
+      "description": "文件分片过期天数.",
+      "defaultValue": 1
+    }
   ]
 }

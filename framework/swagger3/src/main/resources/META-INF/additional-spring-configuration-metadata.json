@@ -1,52 +1,64 @@
 {
   "properties": [
     {
-      "name": "swagger3.group-name",
-      "type": "java.lang.String",
-      "description": "组名称",
-      "defaultValue": "t-pan"
-    },
-    {
-      "name": "swagger3.title",
+      "name": "swagger.title",
       "type": "java.lang.String",
       "description": "接口文档标题",
-      "defaultValue": "t-pan-server"
+      "defaultValue": "Your title"
     },
     {
-      "name": "swagger3.description",
+      "name": "swagger.description",
       "type": "java.lang.String",
       "description": "接口文档描述",
-      "defaultValue": "t-pan-server"
+      "defaultValue": "Your description"
     },
     {
-      "name": "swagger3.terms-of-service-url",
+      "name": "swagger.terms-of-service-url",
       "type": "java.lang.String",
       "description": "接口文档基础请求路径",
-      "defaultValue": "http://127.0.0.1:8080"
+      "defaultValue": "http://127.0.0.1:${server.port}"
     },
     {
-      "name": "swagger3.contact-name",
+      "name": "swagger.contact-name",
       "type": "java.lang.String",
       "description": "联系人名称",
-      "defaultValue": "tangl"
+      "defaultValue": "Your contact name"
     },
     {
-      "name": "swagger3.contact-url",
+      "name": "swagger.contact-url",
       "type": "java.lang.String",
       "description": "联系人地址",
-      "defaultValue": "t-bright.top"
+      "defaultValue": "Your contact url"
     },
     {
-      "name": "swagger3.contact-email",
+      "name": "swagger.contact-email",
       "type": "java.lang.String",
       "description": "联系人邮箱",
-      "defaultValue": "tl-bright@163.com"
+      "defaultValue": "Your contact email"
     },
     {
-      "name": "swagger3.version",
+      "name": "swagger.license-name",
+      "type": "java.lang.String",
+      "description": "许可证名字",
+      "defaultValue": "Your license name"
+    },
+    {
+      "name": "swagger.license-url",
+      "type": "java.lang.String",
+      "description": "许可证url",
+      "defaultValue": "Your license url"
+    },
+    {
+      "name": "swagger.license-identifier",
+      "type": "java.lang.String",
+      "description": "许可证标识",
+      "defaultValue": "Your license identifier"
+    },
+    {
+      "name": "swagger.version",
       "type": "java.lang.String",
       "description": "项目版本",
-      "defaultValue": "v1.0.0"
+      "defaultValue": "1.0"
     }
   ]
 }
